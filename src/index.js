@@ -41,12 +41,19 @@ const context = async ({req}) => {
 
 // Set up Apollo Server
 const server = new ApolloServer({
+    // GraphQL schema definitions
     typeDefs,
+    // Resolvers for fields in the schema
     resolvers,
+    // Data sources for resolvers
     dataSources,
+    // Apollo context object
     context,
+    // Enables and disables schema introspection
     introspection: true,
+    // Enables and disables GraphQL Playground
     playground: true,
+    // Options for integrating with Apollo Studio
     engine: {
         reportSchema: true,
         variant: "current",
